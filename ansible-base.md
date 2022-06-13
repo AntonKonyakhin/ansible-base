@@ -272,7 +272,8 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 
 ```
 
-12. Заполните README.md ответами на вопросы. Сделайте git push в ветку master. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым playbook и заполненным README.md.  
+12. Заполните README.md ответами на вопросы. Сделайте git push в ветку master. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым playbook и заполненным README.md. 
+
 ### Самоконтроль выполненения задания
 
 1. Где расположен файл с some_fact из второго пункта задания?
@@ -292,13 +293,14 @@ ansible-vault encrypt group_vars/deb/examp.yml
 
 ansible-vault decrypt group_vars/deb/examp.yml
 
-5. Можно ли посмотреть содержимое зашифрованного файла без команды расшифровки файла? Если можно, то как?
-
+5. Можно ли посмотреть содержимое зашифрованного файла без команды расшифровки файла? Если можно, то как?  
+```
 root@anton-v-m:~/netology/git-playbook# ansible-vault view group_vars/deb/examp.yml
 Vault password: 
+
 ---
   some_fact: "deb default fact"
-
+```
 
 6. Как выглядит команда запуска playbook, если переменные зашифрованы?
 
@@ -316,7 +318,7 @@ root@anton-v-m:~/netology/git-playbook# ansible-doc -t connection ssh
 9. Какой параметр из модуля подключения ssh необходим для того, чтобы определить пользователя, под которым необходимо совершать подключение?
 
 
-- remote_user
+- remote_user  
         User name with which to login to the remote server, normally set by the remote_user keyword.
         If no user is supplied, Ansible will let the SSH client binary choose the user as it normally.
         [Default: (null)]
